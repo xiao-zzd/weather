@@ -65,7 +65,7 @@ func main() {
 		if err != nil {
 			log.Fatal("插入数据失败：", err)
 		}
-}
+   }
 }
 func initDB() {
 	var err error
