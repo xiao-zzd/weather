@@ -58,7 +58,7 @@ func main() {
 
    //初始化数据库
    initDB()
-
+   //将数据写入到数据库中
    for _, forecast := range weatherResp.Data.Forecast {
 		_, err = db.Exec("INSERT INTO forecast (date, high, low, ymd, week, sunrise, sunset, aqi, fx, fl, wtype, notice) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
       forecast.Date, forecast.High, forecast.Low, forecast.Ymd, forecast.Week, forecast.Sunrise, forecast.Sunset, forecast.Aqi, forecast.Fx, forecast.Fl, forecast.Type, forecast.Notice)
